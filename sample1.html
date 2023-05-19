@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+      .img-container {
+        width: 80%;
+        margin: 5rem auto;
+        height: auto;
+        border: 2px solid;
+      }
+      .img-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      picture {
+        margin: 5rem auto;
+      }
+
+      picture img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <title>Sample1</title>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://images.unsplash.com/photo-1684457718008-d561d76dfbb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60"
+        alt="desert"
+        width="1000"
+        height="1400"
+      />
+      <!-- We make image to follow a container -->
+
+      <div class="img-container">
+        <img
+          src="https://images.unsplash.com/photo-1684318551812-63d888cce300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60"
+          alt="wilderness"
+          width="1024"
+          height="720"
+        />
+      </div>
+    </div>
+
+    <picture>
+      <source srcset="./image-window-small.jpg" media="(max-width: 400px)" />
+      <source srcset="./image-window.jpg" />
+      <img src="./image-window.jpg" alt="window" />
+    </picture>
+  </body>
+</html>
