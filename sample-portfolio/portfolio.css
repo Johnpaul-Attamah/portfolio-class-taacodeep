@@ -18,6 +18,16 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+a,
+a:link,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
 /* Top Nav */
 .site-header {
     position: relative;
@@ -252,11 +262,12 @@ body {
     background-image: url(./images/avatar-full-two.jpg);
 }
 
-.about .intro {
+.about .intro, .skills {
     padding: 1rem;
 }
 
-.about .profile-title {
+.about .profile-title,
+.skills-title, .skill-box h4 {
     font-size: 2rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -266,4 +277,72 @@ body {
 .about .profile-desc {
     font-size: 1.4rem;
     line-height: 2.5rem;
+}
+
+/* SKILLS */
+
+.skills-title {
+    font-weight: 500;
+}
+
+.skill-box {
+    margin-top: 2rem;
+}
+
+.skill-box h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.skills .progress-container {
+    width: 95%;
+    height: 4rem;
+    background-color: #aaa;
+    position: relative;
+}
+
+.skills .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 5%;
+    background-color: #555;
+}
+
+.skills .skill-box:nth-of-type(2) .progress-bar {
+    right: 15%;
+}
+
+.skills .skill-box:nth-of-type(3) .progress-bar {
+    right: 20%;
+}
+
+.skills .progress-bar span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+.resume {
+    display: flex;
+    padding: 1.5rem 2rem;
+    background-color: #555;
+    margin: 1rem;
+    width: fit-content;
+}
+
+.resume span {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #f1f1f1;
+}
+
+.resume .text {
+    margin-left: 1rem;
+
 }
