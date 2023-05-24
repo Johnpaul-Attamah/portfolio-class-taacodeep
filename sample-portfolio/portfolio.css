@@ -28,6 +28,17 @@ a:visited {
     color: #000;
 }
 
+button,
+button:active,
+button:focus {
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
 /* Top Nav */
 .site-header {
     position: relative;
@@ -189,12 +200,12 @@ a:visited {
     flex-direction: column;
 }
 
-.img-container {
+.card .img-container {
     width: 100%;
     height: auto;
 }
 
-.img-container img {
+.card .img-container img {
     height: auto;
     width: 100%;
     object-fit: cover;
@@ -247,27 +258,34 @@ a:visited {
     flex-direction: column;
 }
 
-.img-container {
+.hero .img-container {
     height: 30vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.img-container:nth-child(1) {
+.hero .img-container:nth-child(1) {
     background-image: url(./images/avatar-full-one.jpg);
 }
 
-.img-container:nth-child(2) {
+.hero .img-container:nth-child(2) {
     background-image: url(./images/avatar-full-two.jpg);
 }
 
-.about .intro, .skills {
+.about .intro, 
+.skills, 
+.prices {
     padding: 1rem;
 }
 
 .about .profile-title,
-.skills-title, .skill-box h4 {
+.skills-title, 
+.skill-box h4,
+.prices-title,
+.price-title,
+.contact-title,
+.foot-title {
     font-size: 2rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -281,7 +299,8 @@ a:visited {
 
 /* SKILLS */
 
-.skills-title {
+.skills-title,
+.price-title {
     font-weight: 500;
 }
 
@@ -345,4 +364,413 @@ a:visited {
 .resume .text {
     margin-left: 1rem;
 
+}
+
+.prices {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.prices-title {
+    color: #555;
+    margin-bottom: -1rem;
+}
+
+.price-card {
+    border: 1px solid #cdcdcd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .4);
+    transition: all .3s ease-out;
+}
+
+.price-card:hover .card-cover {
+    background-color: rgba(255, 255, 255, 0);
+    z-index: -1;
+}
+
+.price-title {
+    width: 100%;
+    font-size: 2.5rem;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 3.2rem 0;
+    margin-bottom: 0;
+}
+
+.price-card:nth-last-of-type(2) .price-title {
+    background-color: #1b9a9e;
+}
+
+.prices ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+.prices .items {
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-summary {
+    padding: 4rem;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+.price-summary div {
+    display: flex;
+    align-items: center;
+}
+
+.price-summary span {
+    display: block;
+    text-align: center;
+}
+
+.price-summary .icon {
+    font-size: 2.8rem;
+    margin-right: .5rem;
+}
+
+.price-summary .amt {
+    font-size: 2.5rem;
+}
+
+.price-summary .text {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.cta {
+    padding: 2rem 3rem;
+    background-color: #1b9a9e;
+    margin: 2rem 0;
+    text-transform: capitalize;
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.contact {
+    background-color: #9E9E9E;
+    margin: 2rem -1.5rem;
+    padding: 2.5rem;
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    text-transform: capitalize;
+}
+
+.contact ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #616161;
+}
+
+.contact li {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact li:nth-of-type(2) {
+    background-color: #009688;
+}
+
+.contact li span {
+    display: block;
+    color: #f1f1f1;
+}
+
+.contact li .icon {
+    font-size: 3rem;
+}
+
+.contact li .desc {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact hr {
+    margin: 4rem 1rem 2rem;
+}
+
+.contact form {
+    padding: 1rem;
+}
+
+form .form-control {
+    padding: 1rem 0;
+}
+
+.form-control label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.form-control input {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    border: none;
+    /* border-radius: 5px; */
+    font-size: 1.5rem;
+}
+
+input:focus {
+    outline: 2px solid #000;
+}
+
+button[type=submit] {
+    display: flex;
+    padding: .8rem 2rem;
+    background-color: #000;
+    color: #f1f1f1;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+button[type=submit] span:first-child {
+    margin-right: 1.2rem;
+}
+
+/* FOOTER */
+
+.site-footer {
+    padding: 2rem;
+    padding-bottom: 0;
+    background-color: #616161;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content-wrap {
+    padding: 0 2.5rem;
+    color: #f1f1f1;
+}
+
+.footer-content-wrap:first-child {
+    padding-top: 2.5rem;
+}
+
+.foot-title {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.foot-desc,
+.foot-summary {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.foot-summary a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.foot-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-features li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease-in;
+}
+
+.foot-features li:hover {
+    background-color: rgba(241, 241, 241, 0.4);
+}
+
+li.empty {
+    height: 1.5px;
+    background-color: #f1f1f1;
+    margin: 2rem 0;
+}
+
+li .foot-pic {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.foot-pic .img-box {
+    width: 24%;
+    height: auto;
+}
+
+.foot-pic img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.foot-pic figcaption {
+    width: 60%;
+}
+
+.foot-pic figcaption h5 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.foot-pic figcaption p {
+    font-size: 1.5rem;
+}
+
+.footer-tags {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 6rem;
+}
+
+
+.footer-tags .tag {
+    width: fit-content;
+    padding: .3rem 1rem;
+    background-color: #9E9E9E;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.footer-tags .tag.active {
+    background-color: #000;
+    color: #f1f1f1;
+}
+
+.footer-content-wrap:last-child {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    margin: 0 -2rem;
+}
+
+.footer-content-wrap .foot-summary {
+    color: #f1f1f1;
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 600px) {
+    .projects {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .card {
+        width: calc(100%/3 - 1rem);
+    }
+
+    .hero {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .hero .img-container {
+        width: 50%;
+    }
+
+    .prices {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    .prices-title {
+        width: 100%;
+    }
+    
+    .price-card {
+        width: calc(100%/3 - 1.5rem);
+    }
+
+    .about .skills {
+        padding: 0;
+    }
+
+    .contact ul {
+        flex-direction: row;
+    }
+    
+    .contact li {
+        width: calc(100%/3);
+    }
+
+    .site-footer {
+        padding: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-content-wrap {
+        width: calc(100%/3);
+        padding: 0 2.5rem;
+    }
+    
+    .footer-tags {
+        margin-bottom: 6rem;
+    }
+
+    .footer-content-wrap:last-child {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        margin: 0;
+    }
+
+    .resume {
+        margin: 1rem 0;
+    }
 }
